@@ -23,8 +23,18 @@ export class ApiService {
     }))
   }
 
-  updateHeadquarter(data: any, id: number){
-    return this.http.post<any>("http://localhost:3000/headquarters/"+id, data)
+  updateHeadquarter(id: number, name: any, address: any, email: any, enterprise: any, geolocation: any, status: any, timestart: number){
+    return this.http.put<any>("http://localhost:3000/headquarters/"+id,
+    {
+      "id": id,
+      "name": name,
+      "address": address,
+      "email": email,
+      "enterprise": enterprise,
+      "geolocation": geolocation,
+      "status": status,
+      "timestart": timestart,
+    })
     .pipe(map((res:any)=>{
       return res;
     }));

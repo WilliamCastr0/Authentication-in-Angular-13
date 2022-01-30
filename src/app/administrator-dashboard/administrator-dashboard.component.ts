@@ -26,7 +26,7 @@ export class AdministratorDashboardComponent implements OnInit {
       enterprise:  [""],
       geolocation: [""],
       status: [""],
-      timestart: [""],
+      timestart: [],
     })
     this.getAllHeadquarter();
   }
@@ -49,12 +49,53 @@ export class AdministratorDashboardComponent implements OnInit {
     this.formValue.controls['timestart'].setValue(row.timestart);
   }
 
-  updateStatusHeadquarter(row: any){
+  updateStatusHeadquarterD(row: any){
     this.headquarterModelObj.id = row.id;
-    this.headquarterModelObj.status = 'desactivated';
-    this.api.updateHeadquarter(this.headquarterModelObj, this.headquarterModelObj.id)
+    this.headquarterModelObj.name = row.name;
+    this.headquarterModelObj.address = row.address;
+    this.headquarterModelObj.email = row.email;
+    this.headquarterModelObj.enterprise = row.enterprise;
+    this.headquarterModelObj.geolocation = row.geolocation;
+    this.headquarterModelObj.status = "desactivated";
+    this.headquarterModelObj.timestart = row.timestart;
+
+    this.api.updateHeadquarter(
+        this.headquarterModelObj.id, 
+        this.headquarterModelObj.name, 
+        this.headquarterModelObj.address, 
+        this.headquarterModelObj.email,
+        this.headquarterModelObj.enterprise,
+        this.headquarterModelObj.geolocation,
+        this.headquarterModelObj.status,
+        this.headquarterModelObj.timestart
+      )
     .subscribe(res=>{
-      alert('Updated status Headquarter. Now is'+this.headquarterModelObj.status);
+      alert('Updated status Headquarter. Now is '+this.headquarterModelObj.status);
+    })
+  }
+
+  updateStatusHeadquarterA(row: any){
+    this.headquarterModelObj.id = row.id;
+    this.headquarterModelObj.name = row.name;
+    this.headquarterModelObj.address = row.address;
+    this.headquarterModelObj.email = row.email;
+    this.headquarterModelObj.enterprise = row.enterprise;
+    this.headquarterModelObj.geolocation = row.geolocation;
+    this.headquarterModelObj.status = "activated";
+    this.headquarterModelObj.timestart = row.timestart;
+
+    this.api.updateHeadquarter(
+        this.headquarterModelObj.id, 
+        this.headquarterModelObj.name, 
+        this.headquarterModelObj.address, 
+        this.headquarterModelObj.email,
+        this.headquarterModelObj.enterprise,
+        this.headquarterModelObj.geolocation,
+        this.headquarterModelObj.status,
+        this.headquarterModelObj.timestart
+      )
+    .subscribe(res=>{
+      alert('Updated status Headquarter. Now is '+this.headquarterModelObj.status);
     })
   }
 

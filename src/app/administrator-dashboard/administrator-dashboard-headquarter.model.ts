@@ -6,5 +6,5 @@ export class HeadquarterModel{
     enterprise: string = "";
     geolocation: string = "";
     status: string = "";
-    timestart: string = "";
+    timestart: number = 0;
 }
