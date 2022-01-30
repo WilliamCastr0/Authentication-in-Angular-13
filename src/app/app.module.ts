@@ -7,12 +7,14 @@ import { AdministratorDashboardComponent } from './administrator-dashboard/admin
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
+import { EmployeeDashboardComponent } from './employee-dashboard/employee-dashboard.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AdministratorDashboardComponent,
-    LoginComponent
+    LoginComponent,
+    EmployeeDashboardComponent
   ],
   imports: [
     BrowserModule,
