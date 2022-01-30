@@ -1,0 +1,108 @@
+<nav class="navbar navbar-light bg-primary">
+    <div class="container-fluid">
+        <h1 style="color: aliceblue;">Dashboard access point</h1>
+        <div class="d-flex">
+            <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">Add employee</button>
+        </div>
+    </div>
+</nav>
+
+<table class="table mt-3">
+    <thead>
+        <tr>
+            <th scope="col">Access point</th>
+            <th scope="col">Details</th>
+            <th scope="col">Add employee access</th>
+            <th scope="col">Change headquarter status</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let row of headquarterData">
+            <td>{{ row.name }}</td>
+            <td>
+                <button (click)="onShow(row)" type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#detailsModal">See</button>
+            </td>
+            <td></td>
+            <td>
+                <button (click)="updateStatusHeadquarter(row)"class="btn btn-success">Active</button>
+                <button class="btn btn-danger mx-3">Desactive</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Send link to add new employee</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]= 'formValue'>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">New employee email address</label>
+                        <input type="email" formControlName='email' class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                        <small id="emailHelp" class="form-text text-muted">Example: newemployee@useit.co</small>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Send email</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="detailsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Details</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]= 'formValue'>
+                    <fieldset disabled>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Name</label>
+                            <input type="Name" formControlName='name' class="form-control" id="exampleInputEmail1" placeholder="Disabled input">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Addres</label>
+                            <input type="Name" formControlName='address' class="form-control" id="exampleInputEmail1" placeholder="Disabled input">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Email</label>
+                            <input type="Name" formControlName='email' class="form-control" id="exampleInputEmail1" placeholder="Disabled input">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Enterprise</label>
+                            <input type="Name" formControlName='enterprise' class="form-control" id="exampleInputEmail1" placeholder="Disabled input">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Geolocation</label>
+                            <input type="Name" formControlName='geolocation' class="form-control" id="exampleInputEmail1" placeholder="Disabled input">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Status</label>
+                            <input type="Name" formControlName='status' class="form-control" id="exampleInputEmail1" placeholder="Disabled input">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Time start</label>
+                            <input type="Name" formControlName='timestart' class="form-control" id="exampleInputEmail1" placeholder="Disabled input">
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
