@@ -14,19 +14,19 @@
     <table class="table mt-3 table-hover">
         <thead class="thead-dark">
             <tr>
+                <th style='text-align: center;' scope="col">Item number</th>
                 <th scope="col">Access point</th>
                 <th scope="col">Details</th>
-                <th scope="col">Add employee access</th>
                 <th scope="col">Change headquarter status</th>
             </tr>
         </thead>
         <tbody>
             <tr *ngFor="let row of headquarterData">
+                <td style='text-align: center;'>{{ row.id }}</td>
                 <td>{{ row.name }}</td>
                 <td>
                     <button (click)="onShow(row)" type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#detailsModal">See</button>
                 </td>
-                <td></td>
                 <td>
                     <div class="d-grid gap-2 d-md-block">
                         <button (click)="updateStatusHeadquarterD(row)"class="btn btn-danger mx-3">Desactive</button>
@@ -114,25 +114,38 @@
     </div>
 </div>
 
-<div class="d-grid gap-2 d-md-block">
-    <button (click)="startScan()" class="btn btn-success" type="button">Start scan</button>
-    <button (click)="reset()" class="btn btn-success" type="button" *ngIf="scanResult">Reset</button>
-</div>
-
-<video #video [hidden]="!scanActive" width="50%"></video>
-<canvas #canvas hidden></canvas>
-
-<div class="d-grid gap-2 d-md-block">
-    <button (click)="stopScan()" class="btn btn-success" type="button" *ngIf="scanActive">Stop scan</button>
-</div>
-
-<div class="card mb-3" style="max-width: 540px;" *ngIf="scanResult">
-    <div class="row g-0">
-        <div class="col-md-4">
-            <div class="card-body">
-                <h5 class="card-title">QR code</h5>
-                {{ scanResult }}
+<hr>
+<hr>
+<div class="card text-center">
+    <div class="card-header">
+        <div class="d-grid gap-2 d-md-block">
+            <button (click)="startScan()" class="btn btn-success" type="button">Start scan</button>
+            <button (click)="reset()" class="btn btn-success" type="button" *ngIf="scanResult">Reset</button>
+        </div>
+    </div>
+    <div class="card-body">
+        <video #video [hidden]="!scanActive" width="50%"></video>
+        <canvas #canvas hidden></canvas>
+    </div>
+    <div class="card-footer text-muted">
+        <div class="d-grid gap-2 d-md-block">
+            <button (click)="stopScan()" class="btn btn-success" type="button" *ngIf="scanActive">Stop scan</button>
+            <div class="card mb-3" style="max-width: 540px;" *ngIf="scanResult">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <div class="card-body">
+                            <h5 class="card-title">QR code</h5>
+                            {{ scanResult }}
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </div>
+
+
+
+
+
+

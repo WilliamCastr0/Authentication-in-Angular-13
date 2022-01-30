@@ -16,7 +16,18 @@
                         <label for="exampleInputPassword1">Password</label>
                         <input formControlName="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
                     </div>
-                    <button type="submit" class="btn btn-primary">Login</button>
+                    <div class="form-group">
+                        <label for="exampleInputRole">Role</label>
+                        <select formControlName="role" class="form-select" aria-label="Default select example" >
+                            <option value='' selected>What is your role in the enterprise?</option>
+                            <option value="employee">Employee</option>
+                            <option value="administrator">Administrator</option>
+                        </select>
+                        <hr>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary">Login</button>
+                    </div>
                 </form>
             </div>
         </div>
