@@ -16,27 +16,51 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
       email: [''],
-      password: ['']
+      password: [''],
+      role: ['']
     });
   }
 
   login(){
-    this.http.get<any>("http://localhost:3000/userslogin")
-    .subscribe({
-      next: (res) => {
-      const user = res.find((a: any)=>{
-        return a.email === this.loginForm.value.email && a.password === this.loginForm.value.password 
-      });
-      if( user ){
-        alert("Welcome :D");
-        this.loginForm.reset();
-        this.router.navigate(['dashboard']);
-      }else{
-        alert("Incorrect credentials");
-      }
-    },
-      error: (e) => {
-        alert('Something went wrong!!');
-      }});
+    let role = this.loginForm.value.role;
+    if ( role === 'administrator' ){
+      this.http.get<any>("http://localhost:3000/adminslogin")
+      .subscribe({
+        next: (res) => {
+        const user = res.find((a: any)=>{
+          return a.email === this.loginForm.value.email && a.password === this.loginForm.value.password;
+        })
+  
+        if( user ){
+          alert("Welcome :D");
+          this.loginForm.reset();
+          this.router.navigate(['dashboard']);
+        } else {
+          alert("Incorrect credentials");
+        }
+      },
+        error: (e) => {
+          alert('Something went wrong!!');
+        }});
+    } else if ( role === 'employee' ){
+      this.http.get<any>("http://localhost:3000/employeeslogin")
+      .subscribe({
+        next: (res) => {
+        const user = res.find((b: any)=>{
+          return b.email === this.loginForm.value.email && b.password === this.loginForm.value.password;
+        })
+  
+        if( user){
+          alert("Welcome :D");
+          this.loginForm.reset();
+          this.router.navigate(['employeedashboard']);
+        } else {
+          alert("Incorrect credentials");
+        }
+      },
+        error: (e) => {
+          alert('Something went wrong!!');
+        }}); 
+    } 
   }
 }

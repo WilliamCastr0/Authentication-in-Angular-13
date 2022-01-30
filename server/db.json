@@ -1,12 +1,16 @@
 {
-    "userslogin": [
+    "adminslogin": [
         {
             "email": "administrator@aves.com",
-            "password": "administrator"
-        },
+            "password": "administrator",
+            "role": "administrator"
+        }
+    ],
+    "employeeslogin": [
         {
-            "email": "employee@aves.com",
-            "password": "employee"
+            "email": "mark.retail@aves.com",
+            "password": "employee",
+            "role": "employee"
         }
     ],
     "headquarters": [
@@ -42,7 +46,8 @@
         }
     ],
     "users": [
-        {
+        {   
+            "id": 1,
             "firstname": "Mark",
             "lastname": "Retail",
             "enterprise": "Aves",
@@ -57,7 +62,7 @@
             "name": "Honolulu A.P.",
             "timestart": 8,
             "timeend": 18,
-            "user": "users"
+            "user": "Mark Retail"
         }
     ]
 }
