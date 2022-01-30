@@ -1,8 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AdministratorDashboardComponent } from './administrator-dashboard/administrator-dashboard.component';
-import { EmployeeDashboardComponent } from './employee-dashboard/employee-dashboard.component';
+
 import { LoginComponent } from './login/login.component';
+import { AdministratorDashboardComponent } from './administrator-dashboard/administrator-dashboard.component';
+import { EmployeeDetailsComponent } from './employee-details/employee-details.component';
+import { EmployeeDashboardComponent } from './employee-dashboard/employee-dashboard.component';
+
+
 
 const routes: Routes = [
   {
@@ -22,10 +26,10 @@ const routes: Routes = [
     path: 'employeedashboard',
     component: EmployeeDashboardComponent
   },
-  // {
-  //   path: 'viewemployee/:id',
-  //   component: EmployeeDashboardComponent
-  // }
+  {
+    path: 'viewemployee/:id',
+    component: EmployeeDetailsComponent
+  }
 ];
 
 @NgModule({

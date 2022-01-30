@@ -1,0 +1,47 @@
+<nav class="navbar navbar-light bg-primary">
+    <div class="container-fluid">
+        <h1 style="color: aliceblue;">Dashboard access point</h1>
+        <div class="d-grid gap-2 d-md-block">
+            <div class="d-flex">
+                <button routerLink="/dashboard" type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">Back to the Dashboard</button>
+                <button routerLink="/login" class="btn btn-danger mx-2">Logout</button>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div class="table-responsive">
+    <table class="table mt-3 table-hover">
+        <thead class="thead-dark">
+            <tr>
+                <th style='text-align: center;' scope="col">Details</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr style='text-align: center;'>
+                <h6>First Name</h6>
+                {{ userData[userId].firstname }}
+            </tr>
+            <tr style='text-align: center;'>
+                <h6>Last name</h6>
+                {{ userData[userId].lastname }}
+            </tr>
+            <tr style='text-align: center;'>
+                <h6>Enterprise</h6>
+                {{ userData[userId].enterprise }}
+            </tr>
+            <tr style='text-align: center;'>
+                <h6>Address</h6>
+                {{ userData[userId].address }}
+            </tr>
+            <tr style='text-align: center;'>
+                <h6>Telephone</h6>
+                {{ userData[userId].telephone }}
+            </tr>
+            <tr style='text-align: center;'>
+                <h6>Email</h6>
+                {{ userData[userId].email }}
+            </tr>
+        </tbody>
+    </table>
+</div>

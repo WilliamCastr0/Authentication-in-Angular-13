@@ -8,13 +8,15 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
 import { EmployeeDashboardComponent } from './employee-dashboard/employee-dashboard.component';
+import { EmployeeDetailsComponent } from './employee-details/employee-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AdministratorDashboardComponent,
     LoginComponent,
-    EmployeeDashboardComponent
+    EmployeeDashboardComponent,
+    EmployeeDetailsComponent
   ],
   imports: [
     BrowserModule,

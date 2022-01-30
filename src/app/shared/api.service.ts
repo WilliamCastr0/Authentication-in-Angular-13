@@ -39,4 +39,11 @@ export class ApiService {
       return res;
     }));
   }
+
+  getUserInfo(){
+    return this.http.get<any>("http://localhost:3000/users")
+    .pipe(map((res:any)=>{
+      return res;
+    }))
+  }
 }
