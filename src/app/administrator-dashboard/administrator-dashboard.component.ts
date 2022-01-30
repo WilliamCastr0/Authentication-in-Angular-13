@@ -122,9 +122,6 @@ export class AdministratorDashboardComponent implements OnInit {
     this.videoElement.srcObject = stream;
     this.videoElement.play();
 
-    // this.loading = this.loadingCtrl.create({});
-    // this.loading.present();
-
     requestAnimationFrame(this.scan.bind(this));
   }
 
