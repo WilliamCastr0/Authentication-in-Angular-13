@@ -6,11 +6,13 @@ import { AppComponent } from './app.component';
 import { AdministratorDashboardComponent } from './administrator-dashboard/administrator-dashboard.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AdministratorDashboardComponent
+    AdministratorDashboardComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
