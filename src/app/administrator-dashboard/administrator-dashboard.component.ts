@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import jsQR from 'jsqr';
 import { ApiService } from '../shared/api.service';
 import { HeadquarterModel } from './administrator-dashboard-headquarter.model';
+import swal from 'sweetalert';
 
 @Component({
   selector: 'app-administrator-dashboard',
@@ -54,17 +55,6 @@ export class AdministratorDashboardComponent implements OnInit {
     })
   }
 
-  onShow(row: any){
-    
-    this.formValue.controls['name'].setValue(row.name);
-    this.formValue.controls['address'].setValue(row.address);
-    this.formValue.controls['email'].setValue(row.email);
-    this.formValue.controls['enterprise'].setValue(row.enterprise);
-    this.formValue.controls['geolocation'].setValue(row.geolocation);
-    this.formValue.controls['status'].setValue(row.status);
-    this.formValue.controls['timestart'].setValue(row.timestart);
-  }
-
   updateStatusHeadquarterD(row: any){
     this.headquarterModelObj.id = row.id;
     this.headquarterModelObj.name = row.name;
@@ -86,7 +76,9 @@ export class AdministratorDashboardComponent implements OnInit {
         this.headquarterModelObj.timestart
       )
     .subscribe(res=>{
-      alert('Updated status Headquarter. Now is '+this.headquarterModelObj.status);
+      //alert('Updated status Headquarter. Now is '+this.headquarterModelObj.status);
+      swal('Change added!', `Your headquarter now is `+this.headquarterModelObj.status, 'success');
+      setTimeout(function(){window.location.reload()},900);
     })
   }
 
@@ -111,8 +103,21 @@ export class AdministratorDashboardComponent implements OnInit {
         this.headquarterModelObj.timestart
       )
     .subscribe(res=>{
-      alert('Updated status Headquarter. Now is '+this.headquarterModelObj.status);
+      //alert('Updated status Headquarter. Now is '+this.headquarterModelObj.status);
+      swal('Change added!', `Your headquarter now is `+this.headquarterModelObj.status, 'success');
+      setTimeout(function(){window.location.reload()},900);
     })
+  }
+
+  onShow(row: any){
+    
+    this.formValue.controls['name'].setValue(row.name);
+    this.formValue.controls['address'].setValue(row.address);
+    this.formValue.controls['email'].setValue(row.email);
+    this.formValue.controls['enterprise'].setValue(row.enterprise);
+    this.formValue.controls['geolocation'].setValue(row.geolocation);
+    this.formValue.controls['status'].setValue(row.status);
+    this.formValue.controls['timestart'].setValue(row.timestart);
   }
 
   async startScan(){
