@@ -1,69 +1,69 @@
 {
-    "adminslogin": [
-        {
-            "email": "administrator@aves.com",
-            "password": "administrator",
-            "role": "administrator"
-        }
-    ],
-    "employeeslogin": [
-        {
-            "email": "mark.retail@aves.com",
-            "password": "employee",
-            "role": "employee"
-        }
-    ],
-    "headquarters": [
-        {
-            "id": 1,
-            "name": "Honolulu A.P.",
-            "address": "20 Street 10N",
-            "email": "honolulu@aves.com",
-            "enterprise": "Aves",
-            "geolocation": "(10.55, 75.30)",
-            "status": "activated",
-            "timestart": 8
-        },
-        {
-            "id": 2,
-            "name": "MarkPar A.P.",
-            "address": "230 Source 15S",
-            "email": "markpar@aves.com",
-            "enterprise": "Aves",
-            "geolocation": "(11.55, 112.42)",
-            "status": "activated",
-            "timestart": 8
-        },
-        {
-            "id": 3,
-            "name": "Parse A.P.",
-            "address": "5NE Street 6",
-            "email": "parse@aves.com",
-            "enterprise": "Aves",
-            "geolocation": "(1.23, -90.32)",
-            "status": "activated",
-            "timestart": 8
-        }
-    ],
-    "users": [
-        {   
-            "id": 1,
-            "firstname": "Mark",
-            "lastname": "Retail",
-            "enterprise": "Aves",
-            "address": "21 Street 5N",
-            "telephone": 3161111111,
-            "email": "mark.retail@aves.com",
-            "location": "North East Columbia"
-        }
-    ],
-    "timezone": [
-        {
-            "id": 1,
-            "name": "Honolulu A.P.",
-            "timestart": 8,
-            "timeend": 18,
-            "user": "Mark Retail"
-        }
-    ]
+  "adminslogin": [
+    {
+      "email": "administrator@aves.com",
+      "password": "administrator",
+      "role": "administrator"
+    }
+  ],
+  "employeeslogin": [
+    {
+      "email": "mark.retail@aves.com",
+      "password": "employee",
+      "role": "employee"
+    }
+  ],
+  "headquarters": [
+    {
+      "id": 1,
+      "name": "Honolulu A.P.",
+      "address": "20 Street 10N",
+      "email": "honolulu@aves.com",
+      "enterprise": "Aves",
+      "geolocation": "(10.55, 75.30)",
+      "status": "desactivated",
+      "timestart": 8
+    },
+    {
+      "id": 2,
+      "name": "MarkPar A.P.",
+      "address": "230 Source 15S",
+      "email": "markpar@aves.com",
+      "enterprise": "Aves",
+      "geolocation": "(11.55, 112.42)",
+      "status": "activated",
+      "timestart": 8
+    },
+    {
+      "id": 3,
+      "name": "Parse A.P.",
+      "address": "5NE Street 6",
+      "email": "parse@aves.com",
+      "enterprise": "Aves",
+      "geolocation": "(1.23, -90.32)",
+      "status": "activated",
+      "timestart": 8
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "firstname": "Mark",
+      "lastname": "Retail",
+      "enterprise": "Aves",
+      "address": "21 Street 5N",
+      "telephone": 3161111111,
+      "email": "mark.retail@aves.com",
+      "location": "North East Columbia"
+    }
+  ],
+  "timezone": [
+    {
+      "id": 1,
+      "name": "Honolulu A.P.",
+      "timestart": 8,
+      "timeend": 18,
+      "user": "Mark Retail"
+    }
+  ]
 }

@@ -1,4 +1,4 @@
-<nav class="navbar navbar-light bg-primary">
+<nav class="navbar navbar-light" style="background-color: rgb(137, 221, 130);">
     <div class="container-fluid">
         <h1 style="color: aliceblue;">Dashboard access point</h1>
         <div class="d-grid gap-2 d-md-block">
@@ -9,33 +9,49 @@
         </div>
     </div>
 </nav>
-
-<div class="table-responsive">
-    <table class="table mt-3 table-hover">
-        <thead class="thead-dark">
-            <tr>
-                <th style='text-align: center;' scope="col">Item number</th>
-                <th scope="col">Access point</th>
-                <th scope="col">Details</th>
-                <th scope="col">Change headquarter status</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let row of headquarterData">
-                <td style='text-align: center;'>{{ row.id }}</td>
-                <td>{{ row.name }}</td>
-                <td>
-                    <button (click)="onShow(row)" type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#detailsModal">See</button>
-                </td>
-                <td>
-                    <div class="d-grid gap-2 d-md-block">
-                        <button (click)="updateStatusHeadquarterD(row)"class="btn btn-danger mx-3">Desactive</button>
-                        <button (click)="updateStatusHeadquarterA(row)" class="btn btn-success">Active</button>
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+<br>
+<br>
+<div class="card text-center" style="width: 70%; left: 10%; right: 10%;">
+    <div class="table-responsive">
+        <table class="table table-hover table-borderless ">
+            <thead class="thead-dark">
+                <tr>
+                    <th style='text-align: center;' scope="col">Item number</th>
+                    <th scope="col">Access point</th>
+                    <th scope="col">Details</th>
+                    <th scope="col">Change headquarter status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let row of headquarterData">
+                    <td style='text-align: center;'>{{ row.id }}</td>
+                    <td>{{ row.name }}</td>
+                    <td>
+                        <button (click)="onShow(row)" type="button" class="btn" data-bs-toggle="modal" data-bs-target="#detailsModal">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-align-justify"><line x1="21" y1="10" x2="3" y2="10"/><line x1="21" y1="6" x2="3" y2="6"/><line x1="21" y1="14" x2="3" y2="14"/><line x1="21" y1="18" x2="3" y2="18"/></svg>
+                        </button>
+                    </td>
+                    <td>
+                        <div class="d-grid gap-2 d-md-block">
+                            <button (click)="updateStatusHeadquarterD(row)"class="btn btn-danger mx-3">Desactive</button>
+                            <button (click)="updateStatusHeadquarterA(row)" class="btn btn-success">Active</button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <nav aria-label="Page navigation example ">
+                    <ul class="pagination justify-content-end">
+                        <li class="page-item"><a class="page-link" href="/dashboard" style="color: black;">Previous</a></li>
+                        <li class="page-item"><a class="page-link" href="/dashboard" style="color: black;">1</a></li>
+                        <li class="page-item"><a class="page-link" href="/dashboard" style="color: black;">2</a></li>
+                        <li class="page-item"><a class="page-link" href="/dashboard" style="color: black;">3</a></li>
+                        <li class="page-item"><a class="page-link" href="/dashboard" style="color: black;">Next</a></li>
+                    </ul>
+                </nav>
+            </tfoot>
+        </table>
+    </div>
 </div>
 
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -43,9 +59,6 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">Send link to add new employee</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-                </button>
             </div>
             <div class="modal-body">
                 <form [formGroup]= 'formValue'>
@@ -57,8 +70,8 @@
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Send email</button>
+                <button type="button" class="btn btn-success" data-bs-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Send email</button>
             </div>
         </div>
     </div>
@@ -69,9 +82,6 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">Details</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-                </button>
             </div>
             <div class="modal-body">
                 <form [formGroup]= 'formValue'>
@@ -108,14 +118,15 @@
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-success" data-bs-dismiss="modal">Close</button>
             </div>
         </div>
     </div>
 </div>
 
-<hr>
-<hr>
+<br>
+<br>
+
 <div class="card text-center">
     <div class="card-header">
         <div class="d-grid gap-2 d-md-block">

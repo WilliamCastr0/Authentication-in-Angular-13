@@ -1,4 +1,4 @@
-<nav class="navbar navbar-light bg-primary">
+<nav class="navbar navbar-light" style="background-color: rgb(137, 221, 130);">
     <div class="container-fluid">
         <h1 style="color: aliceblue;">Dashboard access point</h1>
         <div class="d-grid gap-2 d-md-block">
@@ -10,42 +10,44 @@
     </div>
 </nav>
 
-<div class="table-responsive">
-    <table class="table mt-3 table-hover">
-        <thead class="thead-dark">
-            <tr>
-                <th style='text-align: center;' scope="col">Details</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr style='text-align: center;'>
-                <h6>First Name</h6>
-                {{ userData[userId].firstname }}
-            </tr>
-            <tr style='text-align: center;'>
-                <h6>Last name</h6>
-                {{ userData[userId].lastname }}
-            </tr>
-            <tr style='text-align: center;'>
-                <h6>Enterprise</h6>
-                {{ userData[userId].enterprise }}
-            </tr>
-            <tr style='text-align: center;'>
-                <h6>Address</h6>
-                {{ userData[userId].address }}
-            </tr>
-            <tr style='text-align: center;'>
-                <h6>Telephone</h6>
-                {{ userData[userId].telephone }}
-            </tr>
-            <tr style='text-align: center;'>
-                <h6>Email</h6>
-                {{ userData[userId].email }}
-            </tr>
-            <tr style='text-align: center;'>
-                <h6>Location</h6>
-                {{ userData[userId].location }}
-            </tr>
-        </tbody>
-    </table>
+<div class="card text-center" style="width: 50%; left: 25%; right: 25%;">
+    <div class="table-responsive">
+        <table class="table mt-3 table-hover">
+            <thead class="thead-dark">
+                <tr>
+                    <th style='text-align: center;' scope="col">Details</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr style='text-align: center;'>
+                    <h6>First Name</h6>
+                    {{ userData[userId].firstname }}
+                </tr>
+                <tr style='text-align: center;'>
+                    <h6>Last name</h6>
+                    {{ userData[userId].lastname }}
+                </tr>
+                <tr style='text-align: center;'>
+                    <h6>Enterprise</h6>
+                    {{ userData[userId].enterprise }}
+                </tr>
+                <tr style='text-align: center;'>
+                    <h6>Address</h6>
+                    {{ userData[userId].address }}
+                </tr>
+                <tr style='text-align: center;'>
+                    <h6>Telephone</h6>
+                    {{ userData[userId].telephone }}
+                </tr>
+                <tr style='text-align: center;'>
+                    <h6>Email</h6>
+                    {{ userData[userId].email }}
+                </tr>
+                <tr style='text-align: center;'>
+                    <h6>Location</h6>
+                    {{ userData[userId].location }}
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </div>

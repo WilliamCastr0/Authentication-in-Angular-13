@@ -2,6 +2,9 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import swal from 'sweetalert';
+
+
 
 @Component({
   selector: 'app-login',
@@ -32,15 +35,18 @@ export class LoginComponent implements OnInit {
         })
   
         if( user ){
-          alert("Welcome :D");
+          swal("Good day!", "" ,"success");
+          //alert("Welcome :D");
           this.loginForm.reset();
           this.router.navigate(['dashboard']);
         } else {
-          alert("Incorrect credentials");
+          //alert("Incorrect credentials");
+          swal("Error!", "Incorrect credentials :(" ,"error");
         }
       },
         error: (e) => {
-          alert('Something went wrong!!');
+          //alert('Something went wrong!!');
+          swal("Something ocurrs!", "Please, repeat again!" ,"error");
         }});
     } else if ( role === 'employee' ){
       this.http.get<any>("http://localhost:3000/employeeslogin")
@@ -51,15 +57,18 @@ export class LoginComponent implements OnInit {
         })
   
         if( user){
-          alert("Welcome :D");
+          //alert("Welcome :D");
+          swal("Good day!", "" ,"success");
           this.loginForm.reset();
           this.router.navigate(['employeedashboard']);
         } else {
-          alert("Incorrect credentials");
+          //alert("Incorrect credentials");
+          swal("Error!", "Incorrect credentials :(" ,"error");
         }
       },
         error: (e) => {
-          alert('Something went wrong!!');
+         // alert('Something went wrong!!');
+          swal("Something ocurrs!", "Please, repeat again!" ,"error");
         }}); 
     } 
   }
