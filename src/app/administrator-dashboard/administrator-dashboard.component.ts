@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef} from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import jsQR from 'jsqr';
 import { ApiService } from '../shared/api.service';
 import { HeadquarterModel } from './administrator-dashboard-headquarter.model';
 
@@ -10,13 +11,28 @@ import { HeadquarterModel } from './administrator-dashboard-headquarter.model';
 })
 export class AdministratorDashboardComponent implements OnInit {
 
+  scanActive = false;
+  scanResult = ''; 
   formValue !: FormGroup; 
   headquarterModelObj: HeadquarterModel = new HeadquarterModel();
   headquarterData !: any;
 
+  @ViewChild('video', { static: false } ) video!: ElementRef;
+  @ViewChild('canvas', { static: false } ) canvas!: ElementRef;
+
+  videoElement: any;
+  canvasElement: any;
+  canvasContext: any;
 
   constructor(private formbuilber: FormBuilder,
     private api: ApiService) { }
+
+  ngAfterViewInit(){
+    this.videoElement = this.video.nativeElement;
+    this.canvasElement = this.canvas.nativeElement;
+    this.canvasContext = this.canvasElement.getContext('2d');
+
+  }
 
   ngOnInit(): void {
     this.formValue = this.formbuilber.group({
@@ -97,6 +113,69 @@ export class AdministratorDashboardComponent implements OnInit {
     .subscribe(res=>{
       alert('Updated status Headquarter. Now is '+this.headquarterModelObj.status);
     })
+  }
+
+  async startScan(){
+    const stream = await navigator.mediaDevices.getUserMedia({
+      video: { facingMode: 'environment' }
+    });
+    this.videoElement.srcObject = stream;
+    this.videoElement.play();
+
+    // this.loading = this.loadingCtrl.create({});
+    // this.loading.present();
+
+    requestAnimationFrame(this.scan.bind(this));
+  }
+
+  async scan(){
+    if ( this.videoElement.readyState === this.videoElement.HAVE_ENOUGH_DATA ){
+      this.scanActive = true;
+
+      this.canvasElement.height = this.videoElement.videoHeight;
+      this.canvasElement.width = this.videoElement.videoWidth;
+
+      this.canvasContext.drawImage(
+        this.videoElement,
+        0,
+        0,
+        this.canvasElement.width,
+        this.canvasElement.height
+      );
+
+      const imageData = this.canvasContext.getImageData(
+        0,
+        0,
+        this.canvasElement.width,
+        this.canvasElement.height
+      );
+
+      const code = jsQR(imageData.data, imageData.width, imageData.height, {
+        inversionAttempts: 'dontInvert'
+      });
+
+      if ( code ){
+        this.scanActive = false;
+        this.scanResult = code.data;
+        alert(`Open ${this.scanResult}?`);
+      } else {
+        if ( this.scanActive ){
+          requestAnimationFrame(this.scan.bind(this));
+        }
+        requestAnimationFrame(this.scan.bind(this));
+      }
+
+    } else {
+      requestAnimationFrame(this.scan.bind(this));
+    }
+  }
+
+  stopScan(){
+    this.scanActive = false;
+  }
+
+  reset(){
+    this.scanResult = '';
   }
 
 }
