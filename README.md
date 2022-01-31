@@ -18,6 +18,10 @@ Una vez iniciado el Back End se procede a la ejecución del Front End. Para llev
 2. Una vez se encuentre en la carpeta useit-test (y estando en CMD), inicie el proyecto mediante el comando ng serve.
 3. Se le inicializará el Front End en `http://localhost:4200/`. Por favor, no cambie el puerto, puede generar algunos conflictos.
 
+Las credenciales para ingresar a la plataforma son las siguientes:
+Email: administrator@aves.com Contraseña: administrator Rol: Administrador
+Email: mark.retail@aves.com Contraseña: employee Rol: Empleado
+
 
 ## Tenga en cuenta
 
