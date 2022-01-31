@@ -2,6 +2,10 @@
 
 Este proyecto se hizo como prueba técnica para el proceso de convocatorio a UseIT.
 
+## Demo
+
+<a href="https://ibb.co/5TJV55b"><img src="https://i.ibb.co/mJP7HHf/useit-Demo.gif" alt="useit-Demo" border="0"></a>
+
 ## ¿Cómo iniciar mi proyecto?
 
 El proyecto se encuentra en modo desarrollo, es decir, en localhost. 
@@ -28,4 +32,4 @@ Si por algún motivo el proyecto en su ordenador no se ejecuta, quizá se deba a
 
 ## Agradecimientos
 
-Se agredece la oportunidad brindada de participar en el proceso. Cabe destacar que en el proyecto se implementó Bootstrap, Angular 13, JSON-Server, QR Code Generator y otros atributos responsive y enfocados en UI-UX.  
+Se agredece la oportunidad brindada de participar en el proceso. Cabe destacar que en el proyecto se implementó la metodología Kanban a través de Jira, Bootstrap, Angular 13, JSON-Server, QR Code Generator y otros atributos responsive y enfocados en UI-UX  
