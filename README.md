@@ -1,6 +1,6 @@
-# UseitTest
+# Autentificación con Angular 13 y Json-Serve
 
-Este proyecto se hizo como prueba técnica para el proceso de convocatorio a UseIT.
+Proyecto en Angular 13 con Autentificación, manejo de roles (administrator/empleado), uso de API Rest mediante fake server Json-serve y uso de cámara web para Scan QR.
 
 ## Demo
 
@@ -32,8 +32,6 @@ El proyecto implementó las siguientes librerías:
     "rxjs": "~7.4.0" Librería para programación reactiva a través de Observables.
     "sweetalert": "^2.1.2" Librería para desarrollar alerts modernos. La librería se modificó teniendo en cuenta la comunidad de https://github.com/t4t5/sweetalert/issues/890.
 
-Si por algún motivo el proyecto en su ordenador no se ejecuta, quizá se deba a que requiere de una instalación global de estas librerías. Con mucho gusto estaré disponible para todas las dudas.
+## Consideraciones
 
-## Agradecimientos
-
-Se agredece la oportunidad brindada de participar en el proceso. Cabe destacar que en el proyecto se implementó la metodología Kanban a través de Jira, Bootstrap, Angular 13, JSON-Server, QR Code Generator y otros atributos responsive y enfocados en UI-UX  
+En el proyecto se implementó Bootstrap, Angular 13, JSON-Server, QR Code Generator y otros atributos responsive y enfocados en UI-UX  
