@@ -6,7 +6,7 @@ Proyecto en Angular 13 con Autentificación, manejo de roles (administrator/empl
 
 <a href="https://ibb.co/5TJV55b"><img src="https://i.ibb.co/mJP7HHf/useit-Demo.gif" alt="useit-Demo" border="0"></a>
 
-## ¿Cómo iniciar mi proyecto?
+## ¿Cómo iniciar el proyecto?
 
 El proyecto se encuentra en modo desarrollo, es decir, en localhost. 
 La aplicación cuenta con una parte Back End y una parte Front End. La parte Back End se gestionó mediante una fake api diseñada en json-server. Para arrancar el Back End siga los siguientes pasos:
@@ -23,7 +23,7 @@ Email: administrator@aves.com Contraseña: administrator Rol: Administrador
 Email: mark.retail@aves.com Contraseña: employee Rol: Empleado
 
 
-## Tenga en cuenta
+## Tener en cuenta
 
 El proyecto implementó las siguientes librerías:
 
